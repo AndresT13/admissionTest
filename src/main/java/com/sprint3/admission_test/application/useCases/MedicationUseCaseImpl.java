@@ -18,5 +18,14 @@ public class MedicationUseCaseImpl implements IMedicationUseCase {
         return medicationRepository.findById(id).orElseThrow(() -> new NotFoundException(
                 "Could not find medication with ID: " + id
         ));
+
+
+
+
+    }
+
+    @Override
+    public Medication postMedication(Medication medication) {
+        return medicationRepository.create(medication);
     }
 }

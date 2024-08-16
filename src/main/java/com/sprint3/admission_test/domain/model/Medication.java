@@ -1,5 +1,6 @@
 package com.sprint3.admission_test.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,11 +33,13 @@ public class Medication {
     private BigDecimal price;
 
     @Column(name = "expiration_date", nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern="yyyy-MM-dd")
     private LocalDate expirationDate;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", referencedColumnName = "id", nullable = false)
     private Category category;
+
 
 }
 

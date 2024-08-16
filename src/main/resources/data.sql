@@ -52,3 +52,7 @@ VALUES ('Aspirin', 'Used to reduce pain, fever, or inflammation.', 5.99, '2025-1
         (SELECT id FROM categories WHERE name = 'Vitamins')),
        ('Vitamin B12', 'Vitamin essential for red blood cell formation and neurological function.', 7.49, '2024-10-15',
         (SELECT id FROM categories WHERE name = 'Vitamins'));
+
+
+
+
